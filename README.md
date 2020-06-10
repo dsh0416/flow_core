@@ -4,11 +4,19 @@ Flow Core
 > FlowCore is ready for open reviewing, but it haven't tested in production yet,
 > any help are most welcome, breaking change is acceptable.
 
-A multi purpose, extendable, Workflow-net-based workflow engine for Rails applications.
+[中文介绍](README.zh-CN.md)
 
-FlowCore is an open source Rails engine provides core workflow functionalities,
-including workflow definition and workflow instance scheduling.
-Easily making automation (including CI, CD, Data processing, etc.) and BPM applications or help you solve parts which changing frequently.
+FlowCore is a Rails engine to help you build your automation or business process application.
+
+FlowCore modeling workflow with WorkflowNet (a special case of PetriNet) theory which is a generalisation of automata theory such that the concept of concurrently occurring events can be expressed.
+
+You should try FlowCore if you need:
+
+- Working on BPM, OA, CRM or other similar products
+- Working on Airflow-or-n8n-like automation product
+- Embeds in your Rails app, interact your codebase directly
+- User defined workflow
+- Jobs have dependent relationships, may running in different stages
 
 ## Features
 
@@ -111,7 +119,7 @@ Open your browser, and visit `http://localhost:3000`
 
 Architecture:
 
-![Architecture](doc/assets/architecture.png)
+![Architecture](guides/assets/architecture.png)
 
 Basic design based on [An activity based Workflow Engine for PHP By Tony Marston](https://www.tonymarston.net/php-mysql/workflow.html).
 
@@ -138,7 +146,7 @@ Some notable:
     - Require app task finished first (if bind)
 - `terminated` Task killed by instance (e.g Instance cancelled) or other race condition task
 
-![Life cycle of workflow instance](doc/assets/life_cycle_of_workflow_instance.png)
+![Life cycle of workflow instance](guides/assets/life_cycle_of_workflow_instance.png)
 
 ### FlowKit
 
